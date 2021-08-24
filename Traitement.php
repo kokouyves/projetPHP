@@ -72,6 +72,7 @@
             catch(PDOException $e){
                 die('Erreur : ' .$e ->getMessage()) ;
             }
+            try{
             if(isset($_POST['nom'])&&
                (isset($_POST['prenom'])&&
                (isset($_POST['telephone'])&&
@@ -100,8 +101,9 @@
                {
                    echo "Une variable n est pas declaree et ou est null";
                }
-            {
-                
+           }
+            catch(Exception $e){
+                echo('Erreur : ' .$e ->getMessage()) ;
             }
 
 
